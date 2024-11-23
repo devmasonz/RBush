@@ -96,6 +96,14 @@ public partial class RBush<T> : ISpatialDatabase<T>, ISpatialIndex<T> where T : 
 		DoSearch(boundingBox);
 
 	/// <summary>
+	/// returns only the boxes fully included in the given envelope.
+	/// </summary>
+	/// <param name="boundingBox"></param>
+	/// <returns></returns>
+	public IReadOnlyList<T> SearchFullyContained(in Envelope boundingBox) =>
+		DoSearchFullyContained(boundingBox);
+
+	/// <summary>
 	/// Adds an object to the <see cref="RBush{T}"/>
 	/// </summary>
 	/// <param name="item">
