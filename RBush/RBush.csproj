@@ -3,6 +3,7 @@
   <PropertyGroup>
 	<IsPackable>true</IsPackable>
 	<TargetFramework>net9.0</TargetFramework>
+	<AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
@@ -32,16 +33,4 @@
 	  <_Parameter1>RBush.Test</_Parameter1>
 	</AssemblyAttribute>
   </ItemGroup>
-
-  <ItemGroup>
-	<PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" />
-	<PackageReference Include="MinVer" PrivateAssets="all" />
-  </ItemGroup>
-
-  <PropertyGroup Label="MinVer">
-	<MinVerAutoIncrement>minor</MinVerAutoIncrement>
-	<MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
-	<MinVerTagPrefix>v</MinVerTagPrefix>
-  </PropertyGroup>
-
 </Project>
