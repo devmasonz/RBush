@@ -46,10 +46,10 @@ public partial class RBush<T>
 
 	private List<T> DoSearchFullyContained(Envelope envelope)
 	{
-		var containedBoxes = new List<T>();
+		var containedItems = new List<T>();
 
 		if (!Root.Envelope.Intersects(envelope))
-			return containedBoxes;
+			return containedItems;
 
 		var nodesToSearch = new Stack<Node>();
 		nodesToSearch.Push(Root);
@@ -62,11 +62,14 @@ public partial class RBush<T>
 			{
 				var childEnvelope = node.IsLeaf ? child.Envelope : ((Node)child).Envelope;
 
-				if (envelope.Contains(childEnvelope))
+				if (childEnvelope.Intersects(envelope))
 				{
 					if (node.IsLeaf)
 					{
-						containedBoxes.Add((T)child);
+						if (envelope.Contains(childEnvelope))
+						{
+							containedItems.Add((T)child);
+						}
 					}
 					else
 					{
@@ -76,7 +79,7 @@ public partial class RBush<T>
 			}
 		}
 
-		return containedBoxes;
+		return containedItems;
 	}
 	#endregion
 
