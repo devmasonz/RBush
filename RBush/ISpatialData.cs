@@ -1,4 +1,4 @@
-﻿namespace RBush;
+namespace RBush;
 
 /// <summary>
 /// Exposes an <see cref="Envelope"/> that describes the

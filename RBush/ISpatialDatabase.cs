@@ -1,4 +1,4 @@
-﻿namespace RBush;
+namespace RBush;
 
 /// <summary>
 /// Provides the base interface for the abstraction for
